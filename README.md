@@ -19,7 +19,11 @@ The Depression Detection System is an innovative tool designed for the early ide
 
 ## Demo
 
-![Demo Video](https://github.com/user-attachments/assets/e4d50d87-b18d-459d-8313-1ce21799470c)
+
+
+https://github.com/user-attachments/assets/abcbb210-b17b-48d7-b97e-334f5d369083
+
+
 
 This video demonstrates the functionality of the Depression Detection System, showing how users can upload video samples and receive predictions on whether the subject is "Depressed" or "Not Depressed."
 
