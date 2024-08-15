@@ -11,7 +11,6 @@ This project is a web-based application designed to detect depression using faci
 - [Installation](#installation)
 - [Usage](#usage)
 - [Model Details](#model-details)
-- [File Structure](#file-structure)
 
 ## Introduction
 
@@ -117,24 +116,6 @@ The logistic regression model was trained on a dataset of facial features extrac
 2. **Data Preprocessing**: Applies scaling and PCA to reduce dimensionality.
 3. **Prediction**: Uses the logistic regression model to classify the subject as "Depressed" or "Not Depressed".
 
-## File Structure
-
-```plaintext
-├── README.md
-├── requirements.txt
-├── src
-│   ├── Controllers
-│   ├── Models
-│   ├── Views
-│   └── wwwroot
-├── models
-│   ├── OpenFace_2.2.0_win_x64
-│   ├── logistic_regression_model.pkl
-│   └── output
-├── scripts
-│   ├── main.py
-└── Samples
-    └── sample_video.mp4
 ```
 
 - **src**: Contains the ASP.NET Core MVC application.
