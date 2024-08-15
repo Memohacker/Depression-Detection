@@ -1,0 +1,122 @@
+﻿@model Employee
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Depression Detection</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+    <style>
+        .containerr {
+            margin-top: 50px;
+        }
+
+        .card {
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            height: 700px;
+            background-color: rgba(255, 255, 255, 0.7); /* Set background with transparency */
+            backdrop-filter: blur(5px); /* Optional: Adds a blur effect */
+        }
+
+        .card-header {
+            background-color: cadetblue;
+            color: black;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .video-preview {
+            width: 100%;
+            max-width: 100%;
+            height: 400px; /* Fixed height for the video */
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .form-inline {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .fullname-box {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .card-body {
+            width: 80%;
+            margin: auto;
+        }
+
+        .btn-primary {
+            display: block;
+            margin: 0 auto;
+            background-color: cadetblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="containerr">
+        <div class="card col-md-6 offset-md-3">
+            <div class="card-header">
+                Depression Detection
+            </div>
+            <div class="card-body">
+                <form method="post" asp-controller="Employees" asp-action="AddNew" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="form-group form-inline">
+                        <div>
+                            <label asp-for="VideoUrl">Video</label>
+                            <input type="file" name="mediaFile" id="mediaFile" accept=".mp4,.mov,.avi,.wmv" onchange="previewVideo()" class="form-control" />
+                            <span asp-validation-for="VideoUrl" class="text-danger"></span>
+                        </div>
+
+                        <video controls id="empVideo" class="video-preview" style="display:@(Model.VideoUrl != null ? "block" : "none");">
+                            <source id="videoSource" src="@Model.VideoUrl" type="video/mp4">
+                        </video>
+                    </div>
+
+                    <div id="fullnameBox" class="fullname-box">
+                        <label>Result</label>
+                        <div>@Model.FullName</div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Check</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script>
+        function previewVideo() {
+            var file = document.getElementById('mediaFile').files[0];
+            var videoPreview = document.getElementById('empVideo');
+            var videoSource = document.getElementById('videoSource');
+
+            if (file) {
+                var fileURL = URL.createObjectURL(file);
+                videoSource.src = fileURL;
+                videoPreview.load();
+                videoPreview.style.display = 'block';
+            } else {
+                videoPreview.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Depression Detection</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+           
+            font-family: Arial, sans-serif;
+        }
+        body {
+            color: #333;
+        }
+        .container {
+            flex: 1;
+            margin:10px;
+        }
+
+        .containerrr {
+            flex: 1;
+            background: url('/images/stay.jpg') no-repeat center center fixed;
+            background-position: center; /* Center the image horizontally */
+            background-size: cover; /* Scale the image to fill the container */
+        }
+
+        footer {
+            flex-shrink: 0;
+            background: rgba(0, 0, 0, 0.8); /* Optional: to make the footer readable over the background */
+        }
+    </style>
+</head>
+<body>
+    <div class="containerrr">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - Depression Detection - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

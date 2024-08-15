@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+    <style>
+        .containerr {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        
+        .home-button {
+            display: inline-block;
+            padding: 15px 60px; /* Increased padding for bigger button */
+            font-size: 1.2em; /* Increased font size */
+            color: white;
+            background-color: cadetblue;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 535px; /* Moves the button 10px down */
+        }
+
+            .home-button:hover {
+                background-color: #5f9ea0; /* Lighter shade of cadetblue on hover */
+                color:black;
+            }
+
+    </style>
+</head>
+<body>
+    <div class="containerr">
+        <a class="home-button" asp-area="" asp-controller="Home" asp-action="Index">Check Depression</a>
+    </div>
+</body>
+</html>
