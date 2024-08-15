@@ -11,6 +11,7 @@ This project is a web-based application designed to detect depression using faci
 - [Installation](#installation)
 - [Usage](#usage)
 - [Model Details](#model-details)
+- [File Structure](#file-structure)
 
 ## Introduction
 
@@ -18,11 +19,7 @@ The Depression Detection System is a tool designed for early identification of d
 
 ## Demo
 
-
-https://github.com/user-attachments/assets/e4d50d87-b18d-459d-8313-1ce21799470c
-
-
-
+[Demo Video](https://github.com/user-attachments/assets/e4d50d87-b18d-459d-8313-1ce21799470c)
 
 This video demonstrates the functionality of the Depression Detection System, showing how users can upload video samples and receive predictions on whether the subject is "Depressed" or "Not Depressed."
 
@@ -92,7 +89,7 @@ dotnet build
 pip install -r requirements.txt
 ```
 
-2. Ensure the paths in the Python script (`main.py`) match the locations of your OpenFace installation and video samples.
+2. Ensure the paths in the Python script (`script.py`) match the locations of your OpenFace installation and video samples.
 
 ## Usage
 
@@ -116,10 +113,32 @@ The logistic regression model was trained on a dataset of facial features extrac
 2. **Data Preprocessing**: Applies scaling and PCA to reduce dimensionality.
 3. **Prediction**: Uses the logistic regression model to classify the subject as "Depressed" or "Not Depressed".
 
+## File Structure
+
+```plaintext
+├── README.md
+├── requirements.txt
+├── Controllers
+├── Data
+├── Migrations
+├── Models
+├── Properties
+├── Views
+├── wwwroot
+├── bin/Debug/net8.0
+├── obj
+├── Models
+│   ├── OpenFace_2.2.0_win_x64
+│   ├── logistic_regression_model.pkl
+│   └── output
+├── script.py
+├── appsettings.json
+└── Samples
+    └── sample_video.mp4
 ```
 
-- **src**: Contains the ASP.NET Core MVC application.
-- **models**: Contains the OpenFace toolkit, the trained logistic regression model, and output files.
-- **scripts**: Contains the Python script used for feature extraction and prediction.
+- **Controllers, Data, Migrations, Models, Properties, Views**: Contain the core files for the ASP.NET Core MVC application.
+- **Models**: Contains the OpenFace toolkit, the trained logistic regression model, and output files.
+- **Scripts**: Contains the Python script used for feature extraction and prediction.
 - **Samples**: Directory for sample video files.
 
