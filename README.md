@@ -11,15 +11,15 @@ This project is a web-based application designed to detect depression using faci
 - [Installation](#installation)
 - [Usage](#usage)
 - [Model Details](#model-details)
-- [File Structure](#file-structure)
+- [Future Work](#future-work)
 
 ## Introduction
 
-The Depression Detection System is a tool designed for early identification of depression through facial expressions. It leverages OpenFace for feature extraction and a logistic regression model to analyze the extracted features. The application allows users to upload videos, which are then processed to generate a prediction of whether the subject exhibits signs of depression.
+The Depression Detection System is an innovative tool designed for the early identification of depression through facial expression analysis. It leverages the OpenFace toolkit for feature extraction and a logistic regression model to analyze these features. Users can upload videos, which are then processed to generate a prediction on whether the subject exhibits signs of depression.
 
 ## Demo
 
-[Demo Video](https://github.com/user-attachments/assets/e4d50d87-b18d-459d-8313-1ce21799470c)
+![Demo Video](https://github.com/user-attachments/assets/e4d50d87-b18d-459d-8313-1ce21799470c)
 
 This video demonstrates the functionality of the Depression Detection System, showing how users can upload video samples and receive predictions on whether the subject is "Depressed" or "Not Depressed."
 
@@ -89,7 +89,7 @@ dotnet build
 pip install -r requirements.txt
 ```
 
-2. Ensure the paths in the Python script (`script.py`) match the locations of your OpenFace installation and video samples.
+2. Ensure the paths in the Python script (`main.py`) match the locations of your OpenFace installation and video samples.
 
 ## Usage
 
@@ -113,32 +113,12 @@ The logistic regression model was trained on a dataset of facial features extrac
 2. **Data Preprocessing**: Applies scaling and PCA to reduce dimensionality.
 3. **Prediction**: Uses the logistic regression model to classify the subject as "Depressed" or "Not Depressed".
 
-## File Structure
+## Future Work
 
-```plaintext
-├── README.md
-├── requirements.txt
-├── Controllers
-├── Data
-├── Migrations
-├── Models
-├── Properties
-├── Views
-├── wwwroot
-├── bin/Debug/net8.0
-├── obj
-├── Models
-│   ├── OpenFace_2.2.0_win_x64
-│   ├── logistic_regression_model.pkl
-│   └── output
-├── script.py
-├── appsettings.json
-└── Samples
-    └── sample_video.mp4
-```
+In future iterations, the system will be enhanced with a more robust architecture:
 
-- **Controllers, Data, Migrations, Models, Properties, Views**: Contain the core files for the ASP.NET Core MVC application.
-- **Models**: Contains the OpenFace toolkit, the trained logistic regression model, and output files.
-- **Scripts**: Contains the Python script used for feature extraction and prediction.
-- **Samples**: Directory for sample video files.
+- **Frontend**: The user interface will be redesigned using Angular to improve responsiveness and user experience.
+- **Backend**: The backend will be refactored into a .NET ASP API, providing a more scalable and maintainable codebase.
+- **Database**: SQL Server will be integrated to manage and store user data and analysis results efficiently.
 
+---
